@@ -18,6 +18,7 @@ app.use(
     cors({
       credentials: true,
       origin: process.env.FRONTEND_URL,
+
     })
    );  
    
@@ -34,7 +35,7 @@ if (process.env.NODE_ENV !== "development") {
       secure: true,
     };
 }
-
+app.options('*', cors())
 app.use(session(sessionOptions));
 
   
